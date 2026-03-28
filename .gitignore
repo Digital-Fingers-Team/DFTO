@@ -1,2 +1,8 @@
 node_modules/
 .env
+backend/node_modules/
+backend/.env
+app/.dart_tool/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies

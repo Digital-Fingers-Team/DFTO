@@ -47,9 +47,10 @@ class _TeamsScreenState extends State<TeamsScreen> {
                   const SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () async {
+                      final authProvider = context.read<AuthProvider>();
                       await teamProvider.createTeam(token, _teamName.text.trim());
                       if (!mounted) return;
-                      await context.read<AuthProvider>().refreshMe();
+                      await authProvider.refreshMe();
                     },
                     child: const Text('Create Team'),
                   ),
@@ -67,9 +68,10 @@ class _TeamsScreenState extends State<TeamsScreen> {
                   const SizedBox(height: 8),
                   ElevatedButton(
                     onPressed: () async {
+                      final authProvider = context.read<AuthProvider>();
                       await teamProvider.joinTeam(token, _inviteCode.text.trim());
                       if (!mounted) return;
-                      await context.read<AuthProvider>().refreshMe();
+                      await authProvider.refreshMe();
                     },
                     child: const Text('Join Team'),
                   ),
